@@ -1,4 +1,4 @@
-FROM daocloud.io/library/debian
+FROM daocloud.io/library/debian:jessie
 LABEL maintainer="beilunyang <786220806@qq.com>"
 
 ADD ./run.sh /
