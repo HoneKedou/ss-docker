@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -xu
+set -u
 
 # install deps
 echo "deb http://mirrors.aliyun.com/debian/ jessie main non-free contrib

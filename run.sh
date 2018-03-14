@@ -1,20 +1,22 @@
 #!/bin/bash
 
-set -xu
+set -u
 
 echo "------starting running service------"
 
-if [$1 -a ${#1} -gt 5]
-then
-    echo "starting running service shadowsocks with custom password" 
-    service shadowsocks-libev start -c /ss-config.json -u -k $1
-else
-    if [$1] 
+if [ $# -gt 0 ]
+then 
+    if [ ${#1} -gt 5 ]
     then
-        echo "the length of password can't < 6"
+        echo "starting running service shadowsocks with custom password" 
+        service shadowsocks-libev start -c /ss-config.json -u -k $1
     else
+        echo "the length of password can't less than 6"
         echo "starting running service shadowsocks with default password"
+        service shadowsocks-libev start -c /ss-config.json -u
     fi
+else
+    echo "starting running service shadowsocks with default password"
     service shadowsocks-libev start -c /ss-config.json -u
 fi
 echo "starting running service kcptun"
