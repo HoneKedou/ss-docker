@@ -1,7 +1,0 @@
-{
-    "localaddr": ":23344",
-    "remoteaddr": "127.0.0.1:8388",
-    "key": "jsdog",
-    "crypt": "none",
-    "mode": "fast2"
-}
